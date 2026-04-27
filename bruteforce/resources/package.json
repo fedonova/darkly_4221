@@ -1,0 +1,9 @@
+{
+  "type": "module",
+  "name": "bruteforce",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "author": "amoriah",
+  "license": "ISC"
+}
