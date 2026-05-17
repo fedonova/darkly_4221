@@ -1,0 +1,32 @@
+fetch("http://192.168.0.199/index.php?page=upload", {
+  "headers": {
+    "accept": 
+    "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+    "accept-language": "en-US,en;q=0.9,ru;q=0.8,fr;q=0.7",
+    "cache-control": "max-age=0",
+    "content-type": "multipart/form-data; boundary=----WebKitFormBoundaryHNJuxeVsUvAOaGed",
+    "upgrade-insecure-requests": "1"
+  },
+  "referrer": "http://192.168.0.199/index.php?page=upload",
+
+
+  "body": "
+    ------WebKitFormBoundaryHNJuxeVsUvAOaGed\r\n
+      Content-Disposition: form-data; 
+      name=\"MAX_FILE_SIZE\"\r\n\r\n            //это можно заменить
+      100000\r\n
+    ------WebKitFormBoundaryHNJuxeVsUvAOaGed\r\n
+      Content-Disposition: form-data; 
+      name=\"uploaded\"; 
+      filename=\"qV234nDRl0E.jpg\"\r\n
+      Content-Type: image/jpeg\r\n\r\n\r\n
+    ------WebKitFormBoundaryHNJuxeVsUvAOaGed\r\n
+      Content-Disposition: form-data;
+      name=\"Upload\"\r\n\r\n
+      Upload\r\n------WebKitFormBoundaryHNJuxeVsUvAOaGed--\r\n",
+
+
+  "method": "POST",
+  "mode": "cors",
+  "credentials": "include"
+});
