@@ -1,4 +1,4 @@
-fetch("http://192.168.0.199/index.php?page=upload", {
+fetch("http://<adress>/index.php?page=upload", {
   "headers": {
     "accept": 
     "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
@@ -7,9 +7,7 @@ fetch("http://192.168.0.199/index.php?page=upload", {
     "content-type": "multipart/form-data; boundary=----WebKitFormBoundaryHNJuxeVsUvAOaGed",
     "upgrade-insecure-requests": "1"
   },
-  "referrer": "http://192.168.0.199/index.php?page=upload",
-
-
+  "referrer": "http://<adress>/index.php?page=upload",
   "body": "
     ------WebKitFormBoundaryHNJuxeVsUvAOaGed\r\n
       Content-Disposition: form-data; 
@@ -24,8 +22,6 @@ fetch("http://192.168.0.199/index.php?page=upload", {
       Content-Disposition: form-data;
       name=\"Upload\"\r\n\r\n
       Upload\r\n------WebKitFormBoundaryHNJuxeVsUvAOaGed--\r\n",
-
-
   "method": "POST",
   "mode": "cors",
   "credentials": "include"
