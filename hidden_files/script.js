@@ -1,48 +1,32 @@
+let length = 0;
+let result = [];
+
 const fetchREADME = async (url) => {
-  try {
-    const req = await fetch(`${url}/README`);
-    const res = await req.text();
-    // console.log(typeof res);
-    console.log(res);
-  } catch (err) {
-    console.error(err);
-  }
+  const req = await fetch(`${url}/README`);
+  if (!req.ok) return null;
+  return await req.text();
 };
 
 const mapPage = async (url) => {
-  try {
-    const req = await fetch(url);
-    const html = await req.text();
-    const hrefs = [...html.matchAll(/href="([^"]+)"/g)].map(
-      (match) => match[1],
-    );
+  const req = await fetch(url);
+  if (!req.ok) return;
+  const html = await req.text();
+  const hrefs = [...html.matchAll(/href="([^"]+)"/g)].map((match) => match[1]);
 
-    const links = hrefs.filter(
-      (href) => href !== "../" && href.endsWith("/") && href !== "README",
-    );
+  const links = hrefs.filter((href) => href !== "../" && href.endsWith("/"));
 
-    if (links.length) {
-      links.map((link) => {
-        fetchREADME(`http://10.171.57.196/.hidden/${link}`);
-        //what url???
-        mapPage(`url`)
-      });
+  for (const link of links) {
+    length++;
+    const newUrl = `${url}/${link.replace(/\/$/, "")}`;
+    const text = await fetchREADME(newUrl);
+
+    if (text && text.includes("flag")) {
+      result.push({ flag: text, url: newUrl });
     }
-  } catch (err) {
-    console.error(err);
+
+    await mapPage(newUrl);
   }
 };
 
-mapPage();
-
-/*
-function sum(arr, index = 0) {
-  if (index >= arr.length) {
-    return 0;                  // base case
-  }
-  return arr[index] + sum(arr, index + 1);  // recursive step
-}
-
-console.log(sum([1, 2, 3, 4])); // 10
-*/
-//REcURSION
+await mapPage("http://10.171.57.196/.hidden");
+console.log("result: ", result);
