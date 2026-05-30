@@ -33,7 +33,7 @@ Here we use the common columns from information_schema.columns among the others 
 
 In our case it will be 
 
-UNION
+1 UNION
 SELECT column_name, table_name
 FROM information_schema.columns;
 
