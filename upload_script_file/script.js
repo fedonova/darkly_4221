@@ -17,7 +17,6 @@ async function main() {
   });
   form.append("MAX_FILE_SIZE", 10_000);
   form.append("Upload", "Upload");
-  console.log(form.getHeaders());
 
   try {
     const response = await fetch(`http://${adress}/?page=upload`, {
@@ -37,8 +36,6 @@ async function main() {
 
     const res = await response.text();
     await appendFile(resultFilePath, res, "utf8");
-    console.log(res);
-    // console.log(await response.text());
   } catch (e) {
     console.error(e);
   }
