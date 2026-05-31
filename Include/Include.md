@@ -16,7 +16,7 @@ Congratulaton!! The flag is : b12c4b2cb8094750ae121a676269aa9e2872d07c06e429d25a
 
 3. How to avoid
 
-- In the codebase, it is important to avoid using $_GET['page'] directly in include. Examples of vulnerable patterns:
+- In the codebase, it is important to avoid using $_GET['page'] directly in include.
 
 Examples of vulnerable patterns:
 
