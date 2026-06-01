@@ -71,3 +71,5 @@ console.log(await res.text())
 - С `await` возвращается специальный объект `Response`, у которого есть методы `text()` и `json()`. Они также являются асинхронными, то есть тоже требуют использования `await`.
 - `console.log` — это способ вывода данных в консоль.
 
+//todo
+https://cwe.mitre.org/data/definitions/434.html
