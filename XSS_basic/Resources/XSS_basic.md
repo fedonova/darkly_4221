@@ -41,5 +41,5 @@ So, we cat go to the conclusion, that the backend of this application eliminates
     we got here:
     <td>"Name : " <img src="x" onerror="alert(test10)"></td>
     <td>Comment : test10</td> (via DevTools)
-    It could be the perfect example of exploit, if it gave us the flag, but it've never happend.
+    It could be the perfect example of exploit, if it gave us the flag, but it's never happend.
 
