@@ -24,7 +24,7 @@ Most likely, `instagram` is the value of the `site` variable.
 
 We try to replace it with the address of any other website, for example:
 
-<http://10.171.57.196/index.php?page=redirect&site=https://web.telegram.org/>
+<http://<IP>/index.php?page=redirect&site=https://web.telegram.org/>
 
 As a result, the app makes the redirect and gives the flag.
 

@@ -1,12 +1,13 @@
 # Подмена ссылки
 
-Прогулявшись по сайту, можно найти все запросы, связанные с переходами на другие страницы. В приложении встречаются следующие значения параметра `page`:
+Прогулявшись по сайту, можно найти все запросы, связанные с переходами на другие страницы. В приложении встречаются следующие значения параметра `page`: 
 
 - `page=survey`
 - `page=member`
 - `page=upload`
 - `page=searchimg`
 - `page=media`
+- `page=recover`
 - `page=signin`
 - `page=feedback`
 - `page=redirect`
@@ -24,7 +25,7 @@ index.php?page=redirect&site=instagram
 
 Пробуем подменить её на адрес любого другого сайта, например:
 
-<http://10.171.57.196/index.php?page=redirect&site=https://web.telegram.org/>
+<http://<IP>/index.php?page=redirect&site=https://web.telegram.org/>
 
 В результате приложение выполняет переход и выдаёт флаг.
 
