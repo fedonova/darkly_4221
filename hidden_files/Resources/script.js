@@ -1,4 +1,4 @@
-let length = 0;
+let foldersCount = 0;
 let result = [];
 
 const fetchREADME = async (url) => {
@@ -11,12 +11,11 @@ const mapPage = async (url) => {
   const req = await fetch(url);
   if (!req.ok) return;
   const html = await req.text();
-  const hrefs = [...html.matchAll(/href="([^"]+)"/g)].map((match) => match[1]);
-
-  const links = hrefs.filter((href) => href !== "../" && href.endsWith("/"));
+  const hrefs = [...html.matchAll(/href="([a-z]+\/)"/g)].map((match) => match[1]);
+  const links = hrefs.filter((href) => href && href !== "../" && href.endsWith("/"));
 
   for (const link of links) {
-    length++;
+    foldersCount++;
     const newUrl = `${url}/${link.replace(/\/$/, "")}`;
     const text = await fetchREADME(newUrl);
 
@@ -30,3 +29,4 @@ const mapPage = async (url) => {
 
 await mapPage("http://10.171.57.196/.hidden");
 console.log("result: ", result);
+console.log("foldersCount: ", foldersCount);
