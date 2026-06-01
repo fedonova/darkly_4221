@@ -25,7 +25,7 @@ index.php?page=redirect&site=instagram
 
 Пробуем подменить её на адрес любого другого сайта, например:
 
-<http://<IP>/index.php?page=redirect&site=https://web.telegram.org/>
+<http://IP/index.php?page=redirect&site=https://web.telegram.org/>
 
 В результате приложение выполняет переход и выдаёт флаг.
 
