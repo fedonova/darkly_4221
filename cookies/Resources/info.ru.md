@@ -40,3 +40,10 @@ Cookies могут стать источником уязвимостей, ес�
 
 Это похоже на уязвимость **Web Parameter Tampering** (манипуляция параметрами / cookies):  
 [https://owasp.org/www-community/attacks/Web_Parameter_Tampering](https://owasp.org/www-community/attacks/Web_Parameter_Tampering).
+
+todo
+
+Explain the basic functionning of the breach. Explain a method that 
+could have avoided this kind of problem. Explain the impact this 
+specific breach may cause. Compare and demonstrate that both flags 
+are identical. 

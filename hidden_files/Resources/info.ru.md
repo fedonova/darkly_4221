@@ -55,3 +55,6 @@ console.log("result:", result);
 `http://IP/.hidden/whtccjokayshttvxycsvykxcfm/igeemtxnvexvxezqwntmzjltkt/lmpanswobhwcozdqixbowvbrhw`
 
 Итог: не храните важную информацию там, где к ней можно получить доступ.
+
+todo
+Explain the benefit of this breach

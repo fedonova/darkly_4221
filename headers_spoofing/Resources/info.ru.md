@@ -34,3 +34,9 @@ https://owasp.org/www-community/pages/attacks/ip_spoofing_via_http_headers
 - **User-Agent** — заголовок, который используется для определения пользовательского агента.
 - **Referer** — заголовок, который указывает, с какого адреса запрос.
 - **curl** — команда для выполнения http/s запросов через терминал.
+
+
+todo
+Explain the basic functionning of the breach. Explain a method that 
+could have avoided this kind of problem. Explain the benefit of this 
+breach. Compare and demonstrate that both flags are identical. 

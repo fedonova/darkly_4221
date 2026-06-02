@@ -73,3 +73,8 @@ console.log(await res.text())
 
 //todo
 https://cwe.mitre.org/data/definitions/434.html
+Explain the basic functionning of the breach. Explain a method that 
+could have avoided this kind of problem. Explain the impact this 
+specific breach may cause. Compare and demonstrate that both flags 
+are identical. 
+
