@@ -1,6 +1,6 @@
 # Replacing the email address
 
-On the page <http://IP/?page=signin>, there is a link **"I forgot my password"**. It redirects to <http://IP/?page=recover>. Here, the only active element is the **"Submit"** button. We look at how this button looks in the DOM. We see this:
+On the page `http://IP/?page=signin`, there is a link **"I forgot my password"**. It redirects to `http://IP/?page=recover`. Here, the only active element is the **"Submit"** button. We look at how this button looks in the DOM. We see this:
 
 ```bash
 <form action="#" method="POST">
