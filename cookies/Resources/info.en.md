@@ -19,7 +19,7 @@ A hash is used to:
 - check data integrity (that a file was not changed on the way).
 
 If needed, you can try to guess which hash algorithm was used with an online tool, for example:  
-[https://toolk.io/ru/tools/hash-identifier](https://toolk.io/ru/tools/hash-identifier).
+[hash-identifier](https://toolk.io/ru/tools/hash-identifier).
 
 ### Cookies
 

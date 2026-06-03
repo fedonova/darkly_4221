@@ -55,4 +55,5 @@ console.log("result:", result);
 In the end, the flag was found in this file:
 `http://IP/.hidden/whtccjokayshttvxycsvykxcfm/igeemtxnvexvxezqwntmzjltkt/lmpanswobhwcozdqixbowvbrhw`
 
-The main idea: the robots.txt file can show what is stored in the project, and this is information leakage. Anyone can view this file, so sensitive parts should be protected with authentication, with checks on the client IP, or by not giving direct access to these resources at all and handling access on the frontend side, for example.
+## The main idea
+The robots.txt file can show what is stored in the project, and this is information leakage. Anyone can view this file, so sensitive parts should be protected with authentication, with checks on the client IP, or by not giving direct access to these resources at all and handling access on the frontend side, for example.
