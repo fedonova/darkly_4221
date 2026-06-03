@@ -62,19 +62,12 @@ console.log(await res.text())
 
 В ответе получается HTML-страница с флагом.
 
+Таким способом можно загружать или передавать опасные типы файлов (скрипты), выполнение которых можно вызвать через url.
 Эта уязвимость говорит нам о том, что не следует доверять заголовку `Content-Type`, а нужно проводить проверку самого файла, может быть на клиенте, может быть на сервере, в зависимости от архитекуты веб приложения:
-- https://cheatsheetseries.owasp.org/cheatsheets/File_Upload_Cheat_Sheet.html
+- https://cwe.mitre.org/data/definitions/434.html
 
 ## Примечания к JavaScript
 
 - Метод `fetch` асинхронный: он возвращает не сам ответ от сервера, а объект `Promise`. Чтобы дождаться ответа, используется `await`.
 - С `await` возвращается специальный объект `Response`, у которого есть методы `text()` и `json()`. Они также являются асинхронными, то есть тоже требуют использования `await`.
 - `console.log` — это способ вывода данных в консоль.
-
-//todo
-https://cwe.mitre.org/data/definitions/434.html
-Explain the basic functionning of the breach. Explain a method that 
-could have avoided this kind of problem. Explain the impact this 
-specific breach may cause. Compare and demonstrate that both flags 
-are identical. 
-

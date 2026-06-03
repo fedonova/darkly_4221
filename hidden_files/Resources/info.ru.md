@@ -54,7 +54,4 @@ console.log("result:", result);
 
 `http://IP/.hidden/whtccjokayshttvxycsvykxcfm/igeemtxnvexvxezqwntmzjltkt/lmpanswobhwcozdqixbowvbrhw`
 
-Итог: не храните важную информацию там, где к ней можно получить доступ.
-
-todo
-Explain the benefit of this breach
+Вывод: в файле robots.txt можно узнать, что хранится в проекте — это утечка информации. Каждый может просмотреть этот файл, поэтому следует защищать чувствительные места авторизацией, проверкой входящего IP или вовсе не давать доступ к этим ресурсам, а вместо этого обрабатывать доступ на стороне фронтенда.
