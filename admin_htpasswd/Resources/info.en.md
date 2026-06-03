@@ -51,6 +51,6 @@ To let the robot find it, the `robots.txt` file is placed in the site root, next
 
 ## Extra materials
 
-You can read more details about robots and robots.txt [here](https://www.robotstxt.org/faq.html):
+You can read more details about robots and robots.txt [here](https://www.robotstxt.org/faq.html)
 
-OWASP explains how to test a site for information leakage (including robots.txt) [here](https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/01-Information_Gathering/03-Review_Webserver_Metafiles_for_Information_Leakage):
+OWASP explains how to test a site for information leakage (including robots.txt) [here](https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/01-Information_Gathering/03-Review_Webserver_Metafiles_for_Information_Leakage)

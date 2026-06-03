@@ -1,0 +1,10 @@
+{login: admin, password: shadow }
+{login: user, password: shadow }
+{login: test, password: shadow }
+{login: own, password: shadow }
+{login: one, password: shadow }
+{login: me, password: shadow }
+{login: support, password: shadow }
+{login: demo, password: shadow }
+{login: info, password: shadow }
+{login: webmaster, password: shadow }
