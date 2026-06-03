@@ -38,3 +38,6 @@ Cookies can become a source of problems if we do not use the security flags: `Ht
 
 This is similar to the **Web Parameter Tampering** vulnerability (changing parameters / cookies):  
 [https://owasp.org/www-community/attacks/Web_Parameter_Tampering](https://owasp.org/www-community/attacks/Web_Parameter_Tampering).
+
+## What harm can this manipulation cause?
+If we take our case, where the user gets admin rights, the impact is very serious. The attacker basically gets full control over the site and can access users’ personal data, internal reports, statistics, payment data, and can also edit content and change application settings.

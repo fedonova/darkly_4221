@@ -25,8 +25,18 @@ curl -H "Referer: https://www.nsa.gov/" \
 
 In the response page we get the flag.
 
-The `Referer` value can be used to limit access to a site from specific pages, and also to limit the number of requests from one place.
+## Impact
+IP spoofing can strongly affect web apps that log what users do.
+It makes history data wrong and poisons the logs.
+Attackers can change what the logs show, so it is hard to see which actions were normal and which were attacks.
 
+## How to avoid
+1. Check and clean input data: Use strict input validation, including for headers.
+2. Add access rules and limits for IP addresses.
+3. Log all access attempts from untrusted or unknown IPs to find problems and react to them.
+4. Review these logs regularly.
+
+## Info
 [https://owasp.org/www-community/pages/attacks/ip_spoofing_via_http_headers](https://owasp.org/www-community/pages/attacks/ip_spoofing_via_http_headers)
 
 ## Short notes

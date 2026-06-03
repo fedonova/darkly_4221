@@ -31,8 +31,6 @@ Cookies могут стать источником уязвимостей, ес�
 - **Secure** — разрешает передавать cookie только по HTTPS (данные отправляются не в открытом виде, а по зашифрованному каналу).
 - **SameSite** — управляет межсайтовой передачей cookie (помогает защищаться от CSRF).
 
----
-
 ## Почему мы нашли флаг
 
 1. Сайт доверяет cookies. На сервере нет надёжного серверного хранения и проверки признака `is_admin` (роль фактически определяется значением на стороне клиента).
@@ -41,9 +39,5 @@ Cookies могут стать источником уязвимостей, ес�
 Это похоже на уязвимость **Web Parameter Tampering** (манипуляция параметрами / cookies):  
 [https://owasp.org/www-community/attacks/Web_Parameter_Tampering](https://owasp.org/www-community/attacks/Web_Parameter_Tampering).
 
-todo
-
-Explain the basic functionning of the breach. Explain a method that 
-could have avoided this kind of problem. Explain the impact this 
-specific breach may cause. Compare and demonstrate that both flags 
-are identical. 
+## Какой вред можно нанести этой манипуляцией? 
+Если брать в приме наш случай, когда пользователь получает права админа, то последствия очень серьезные, фактически взломщик получает полную власть над сайтом, и имеет доступ к персональным данным пользователей, внутренним отчетам, статистике, платежным данным + может править контент, менять настройки приложения
