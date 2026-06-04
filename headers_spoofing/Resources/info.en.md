@@ -26,14 +26,14 @@ curl -H "Referer: https://www.nsa.gov/" \
 In the response page we get the flag.
 
 ## Impact
-IP spoofing can strongly affect web apps that log what users do.
+IP spoofing can write false information in log about users activity. 
 It makes history data wrong and poisons the logs.
-Attackers can change what the logs show, so it is hard to see which actions were normal and which were attacks.
+Attackers can change what the logs show, so it is hard to see which actions were normal and which were not.
 
 ## How to avoid
-1. Check and clean input data: Use strict input validation, including for headers.
+1. Use strict validation for headers.
 2. Add access rules and limits for IP addresses.
-3. Log all access attempts from untrusted or unknown IPs to find problems and react to them.
+3. Log all activity from untrusted or unknown IPs to find problems and react to them.
 4. Review these logs regularly.
 
 ## Info

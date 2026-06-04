@@ -5,9 +5,7 @@ There is one more braches in the file `http://IP/robots.txt`-  a hidden folder .
 To do this,I wrote a script. It walks through the folders recursively, and if the content has the word `flag`, it saves the path and the flag in an array:
 
 ```bash
-let foldersCount = 0;
 let result = [];
-
 
 const fetchREADME = async (url) => {
   const req = await fetch(`${url}/README`);
@@ -16,28 +14,17 @@ const fetchREADME = async (url) => {
 };
 
 const mapPage = async (url) => {
-  // request the HTML of the page
   const req = await fetch(url);
   if (!req.ok) return;
-  const html = await req.text(); // string
+  const html = await req.text();
 
-  // save all folder names in an array
   const hrefs = [...html.matchAll(/href="([a-z]+\/)"/g)].map((match) => match[1]);
-
-  // filter so that we keep all folder names except "back" and "README"
   const links = hrefs.filter((href) => href !== "../" && href.endsWith("/"));
 
-  // recursion is called while the page has a list of files
   for (const link of links) {
-    foldersCount++;
-
-    // build a new URL for the request
     const newUrl = `${url}/${link.replace(/\/$/, "")}`;
-
-    // get the contents of the file
     const text = await fetchREADME(newUrl);
 
-    // extra check
     if (text && text.includes("flag")) {
       result.push({ flag: text, url: newUrl });
     }
@@ -46,9 +33,7 @@ const mapPage = async (url) => {
   }
 };
 
-// start from the root of the folder
 await mapPage("http://IP/.hidden");
-
 console.log("result:", result);
 ```
 
