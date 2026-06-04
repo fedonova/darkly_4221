@@ -1,14 +1,14 @@
 # Hidden folder
 
-In the file `http://IP/robots.txt`, a hidden folder called `.hidden` was found. If we go inside it, we can see many similar subfolders with messages from the Darkly creators. The idea was to check what is written in each of these files: maybe one of them has a flag, or even several flags.
+There is one more braches in the file `http://IP/robots.txt`-  a hidden folder . If we go inside it, we can see many similar subfolders with messages from the Darkly creators. The idea was to check what is written in each of these files: maybe one of them has a flag, or even several flags.
 
-To do this, a script was written. It walks through the folders recursively, and if the content has the word `flag`, it saves the path and the flag itself in an array:
+To do this,I wrote a script. It walks through the folders recursively, and if the content has the word `flag`, it saves the path and the flag in an array:
 
 ```bash
 let foldersCount = 0;
 let result = [];
 
-// return text from the README file
+
 const fetchREADME = async (url) => {
   const req = await fetch(`${url}/README`);
   if (!req.ok) return null;

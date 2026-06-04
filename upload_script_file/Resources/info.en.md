@@ -1,11 +1,11 @@
 # Uploading a script as an image
 
-On the page `http://IP/?page=upload` (the **Add image** button), you can upload a script and make it look like an image.  
-How can this be done?
+On the upload file page `http://IP/?page=upload` (the **Add image** button), we can upload a script (maybe malicious script) and make it look like an image.  
+How we can do it?
 
 ## 1. Checking the allowed format
 
-We try to upload images in different formats. We find that the page accepts JPEG. Then we look at what a successful request looks like:
+First, when we were looking for the flag, we tried to upload images in different formats. We found that the page accepts JPEG or JPG formats (the same formats only the writing differs). So, lets look how a successful request looks like:
 
 ```bash
 fetch("http://IP/?page=upload", {
@@ -20,6 +20,8 @@ fetch("http://IP/?page=upload", {
   "credentials": "omit"
 });
 ```
+
+For taking the request code we use DevTools in the browser. DevTools are the instrument for developers, it helps us to check different website parametrs: integration between the backand and frontend (requests and responses), page elements with styles, browser storage files, developers console and so on.
 
 ## 2. Looking at the request body
 
@@ -62,7 +64,7 @@ console.log(await res.text())
 
 The server returns an HTML page with the flag.
 
-With this method, it is possible to upload or send dangerous file types (scripts), which can later be run by opening a URL.
+With this method, it is possible to upload or send dangerous file types (scripts), which can later be run by opening a URL. But in our case I couldn't find our script to execution it (`/tmp/file.js`).
 This weakness shows that we should not trust only the `Content-Type` header. We must check the real file content, either on the client side or on the server side, depending on the web app design, info:
 - https://cwe.mitre.org/data/definitions/434.html
 
