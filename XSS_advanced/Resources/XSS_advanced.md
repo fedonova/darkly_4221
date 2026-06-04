@@ -1,4 +1,4 @@
-Step:
+Steps:
 
 1. Entry point: URL parameters. In the address bar we see:
 
