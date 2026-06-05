@@ -18,9 +18,7 @@ The first comment clearly points to the `Referer` header, the second one to the 
 We cannot easily send such headers from a normal browser, but we can send the request with `curl`:
 
 ```bash
-curl -H "Referer: https://www.nsa.gov/" \
-     -H "User-Agent: ft_bornToSec" \
-     "http://IP/?page=b7e44c7a40c5f80139f0a50f3650fb2bd8d00b0d24667c4c2ca32c88e13b758f"
+curl -H "Referer: https://www.nsa.gov/" -H "User-Agent: ft_bornToSec" "http://IP/?page=b7e44c7a40c5f80139f0a50f3650fb2bd8d00b0d24667c4c2ca32c88e13b758f"
 ```
 
 In the response page we get the flag.

@@ -8,17 +8,3 @@
 {login: 1, password: shadow }
 {login: root, password: shadow }
 {login: administrator, password: shadow }
-{login: guest, password: shadow }
-{login: support, password: shadow }
-{login: demo, password: shadow }
-{login: info, password: shadow }
-{login: webmaster, password: shadow }
-{login: default, password: shadow }
-{login: manager, password: shadow }
-{login: operator, password: shadow }
-{login: service, password: shadow }
-{login: backup, password: shadow }
-{login: superuser, password: shadow }
-{login: dev, password: shadow }
-{login: developer, password: shadow }
-{login: system, password: shadow }

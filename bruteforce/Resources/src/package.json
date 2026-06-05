@@ -1,3 +1,6 @@
 {
-  "type": "commonjs"
+  "type": "commonjs",
+  "scripts": {
+    "start": "rm result && node script.js"
+  }
 }

