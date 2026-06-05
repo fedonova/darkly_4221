@@ -4,39 +4,6 @@ There is one more braches in the file `http://IP/robots.txt`-  a hidden folder .
 
 To do this,I wrote a script. It walks through the folders recursively, and if the content has the word `flag`, it saves the path and the flag in an array:
 
-```bash
-let result = [];
-
-const fetchREADME = async (url) => {
-  const req = await fetch(`${url}/README`);
-  if (!req.ok) return null;
-  return await req.text();
-};
-
-const mapPage = async (url) => {
-  const req = await fetch(url);
-  if (!req.ok) return;
-  const html = await req.text();
-
-  const hrefs = [...html.matchAll(/href="([a-z]+\/)"/g)].map((match) => match[1]);
-  const links = hrefs.filter((href) => href !== "../" && href.endsWith("/"));
-
-  for (const link of links) {
-    const newUrl = `${url}/${link.replace(/\/$/, "")}`;
-    const text = await fetchREADME(newUrl);
-
-    if (text && text.includes("flag")) {
-      result.push({ flag: text, url: newUrl });
-    }
-
-    await mapPage(newUrl);
-  }
-};
-
-await mapPage("http://IP/.hidden");
-console.log("result:", result);
-```
-
 In the end, the flag was found in this file:
 `http://IP/.hidden/whtccjokayshttvxycsvykxcfm/igeemtxnvexvxezqwntmzjltkt/lmpanswobhwcozdqixbowvbrhw`
 
