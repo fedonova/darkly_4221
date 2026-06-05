@@ -1,0 +1,17 @@
+{
+  "name": "upload_script_file",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "rm result.html && npm i && node script.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "form-data": "^4.0.0",
+    "formdata-node": "^6.0.3",
+    "node-fetch": "^3.2.10"
+  }
+}
